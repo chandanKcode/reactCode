@@ -24,8 +24,8 @@ function handleSubmit(e){
 function toDoToggle(id,completed)
 {
   setToDos(currentToDos=>{   
-     return  currentToDos.map(toDos=>{
-      if(toDos.id===id) {
+     return  currentToDos.map(toDo=>{
+      if(toDo.id==id) {
         return {...toDo,completed}
       }
      })
@@ -57,7 +57,7 @@ setToDos(currentToDo=>{
       {toDos.map(toDo => {
         return (
       <li  key={toDo.id}>
-        <input type="checkbox" className='chkBox' checked={toDo.completed} onChange={e=>toDoToggle(toDo.id,e.target.checked)}/>
+                <input type="checkbox" className='chkBox' checked={toDo.completed} onChange={e => toDoToggle(toDo.id,e.target.checked)}/>
         <label className='lbl'>{toDo.newItem}</label>
         <button className='btn-small' onClick={() =>toDoDelete(toDo.id)}> Delete</button>
       </li>
